@@ -224,11 +224,11 @@ docker run --gpus all -v $(pwd)/results:/app/results bbbp-graph-transformer
 If you use this work, please cite:
 
 ```bibtex
-@software{karimi2026graphtransformer,
-  author = {Karimi, Vania},
+@software{Moafi2026graphtransformer,
+  author = {Moafi , Sepideh},
   title = {GraphTransformerSOTA2026: Hybrid GIN-Transformer for BBB Prediction},
   year = {2026},
-  url = {https://github.com/yourusername/bbbp-graph-transformer}
+  url = {https://github.com/AIResearcher20/bbbp-graph-transformer}
 }
 ```
 
