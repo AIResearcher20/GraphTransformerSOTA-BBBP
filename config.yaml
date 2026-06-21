@@ -1,0 +1,42 @@
+# ============================================================
+# Master Configuration for GraphTransformerSOTA2026
+# ============================================================
+
+experiment:
+  name: "bbbp_graph_transformer"
+  seed: 42
+  output_dir: "./results"
+  device: "auto"
+
+data:
+  dataset_name: "BBBP"
+  root: "./data"
+  val_size: 0.15
+  test_size: 0.15
+  batch_size: 32
+
+model:
+  architecture: "GraphTransformerSOTA2026"
+  in_channels: 9
+  hidden_channels: 256
+  out_channels: 2
+  num_layers: 4
+  num_heads: 4
+  dropout: 0.3
+
+training:
+  epochs: 50
+  learning_rate: 0.001
+  weight_decay: 5e-4
+  early_stopping_patience: 10
+  gradient_clip: 1.0
+  scheduler:
+    type: "ReduceLROnPlateau"
+    patience: 5
+    factor: 0.5
+
+evaluation:
+  metrics: ["accuracy", "f1", "precision", "recall", "auc"]
+  save_model: true
+  save_predictions: true
+  plot_history: true
